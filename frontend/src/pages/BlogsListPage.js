@@ -9,7 +9,7 @@ const BlogsListPage = () => {
     }, [])
 
     let getBlogs = async ()=> {
-        let response = await fetch('http://127.0.0.1:8000/api/blogs/')
+        let response = await fetch('/api/blogs/')
         let data = await response.json()
         setBlogs(data)
     }

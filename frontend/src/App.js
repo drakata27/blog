@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import BlogsListPage from './pages/BlogsListPage';
+import BlogPage from './pages/BlogPage'
 
 import {
   BrowserRouter as Router,
@@ -13,7 +14,10 @@ function App() {
     <Router>
       <div className="dark">
         <Header />
-        <BlogsListPage />
+        <Routes>
+          <Route path='/' exact Component={BlogsListPage} />
+          <Route path='/blog/:id' Component={BlogPage} />
+        </Routes>
       </div>
     </Router>
   );
