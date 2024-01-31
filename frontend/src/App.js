@@ -1,11 +1,21 @@
 import './App.css';
-import Header from './components/Header/Header';
+import Header from './components/Header';
+import BlogsListPage from './pages/BlogsListPage';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="dark">
-      <Header />
-    </div>
+    <Router>
+      <div className="dark">
+        <Header />
+        <BlogsListPage />
+      </div>
+    </Router>
   );
 }
 
