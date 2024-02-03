@@ -39,6 +39,17 @@ const CreateBlog = () => {
         }
     };
 
+    let handleSubmit = ()=> {
+
+        if (blog.title.trim() !== '' &&
+            blog.subtitle.trim() !== '' &&
+            blog.body.trim() !== '') {
+            createBlog();
+        } else {
+            alert('Blog contents cannot be empty');
+        }        
+    }
+
     return (
         <div className='create-blog'>
             <input
@@ -64,7 +75,7 @@ const CreateBlog = () => {
                 value={blog.body}
                 onChange={handleInputChange}
             ></textarea>
-            <button onClick={createBlog}>Publish</button>
+            <button onClick={handleSubmit}>Publish</button>
         </div>
     );
 };
