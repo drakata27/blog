@@ -8,6 +8,7 @@ import {
   Route,
   Routes
 } from "react-router-dom";
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/' exact Component={BlogsListPage} />
           <Route path='/blog/:id' Component={BlogPage} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

@@ -19,11 +19,14 @@ const BlogPage = () => {
       }, [id]);
 
   return (
-    <div>
+    <div className='blog-page'>
         <h1>{blog?.title}</h1>
         <h2>{blog?.subtitle}</h2>
         <p>{getTime(blog?.created)}</p>
-        <img src={Paceholder} alt='post'/>
+        {/* <img className='blog-page-img' src={Paceholder} alt='post'/> */}
+        <div className='img-container'>
+          <img src={Paceholder} alt='post'/>
+        </div>
         <p>{blog?.body}</p>
     </div>
   )

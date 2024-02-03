@@ -1,11 +1,4 @@
 import React from 'react'
-import PostIcon from '../assets/post.png'
-
-// import {
-//   HashRouter as Router,
-//   Route,
-//   Routes
-// } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -15,8 +8,6 @@ const Header = () => {
             <button>
               <span class="material-symbols-outlined">edit_square</span>
             </button>
-            {/* <button><a href="/">Sign In</a></button>
-            <button><a href="/">Sign Up</a></button> */}
         </div>
     </div>
   )
