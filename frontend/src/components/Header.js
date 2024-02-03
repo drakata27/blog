@@ -8,7 +8,7 @@ const Header = () => {
         <div className="buttons">
           <button>
             <Link to="/blog/new/">
-              <span class="material-symbols-outlined">edit_square</span>
+              <span className="material-symbols-outlined">edit_square</span>
             </Link>
           </button>
         </div>

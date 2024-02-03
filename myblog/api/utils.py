@@ -7,6 +7,15 @@ def getBlogsList():
     serializer = BlogSerializer(blogs, many=True)
     return Response(serializer.data)
 
+def createBlog(request):
+    data = request.data
+    blog = Blog.objects.create(
+        title=data['title'],
+        subtitle=data['subtitle'],
+        body=data['body']
+    )
+    serializer = BlogSerializer(blog, many=False)
+    return Response(serializer.data)
 
 def getBlogDetail(request, pk):
     blog = Blog.objects.get(id=pk)

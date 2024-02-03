@@ -9,6 +9,7 @@ import {
   Route,
   Routes
 } from "react-router-dom";
+import CreateBlog from './pages/CreateBlog';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path='/' exact Component={BlogsListPage} />
           <Route path='/blog/:id' Component={BlogPage} />
+          <Route path='/blog/new' Component={CreateBlog} />
         </Routes>
         <Footer />
       </div>

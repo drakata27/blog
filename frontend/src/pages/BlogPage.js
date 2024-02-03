@@ -7,7 +7,6 @@ const BlogPage = () => {
     let {id} = useParams();
     let [blog, setBlog] = useState(null);
 
-
     useEffect(() => {
         const getBlog = async () => {
           if (id==='new') return

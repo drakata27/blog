@@ -45,9 +45,13 @@ def getRoutes(request):
 
     return Response(routes)
 
-@api_view(['GET'])
+@api_view(['GET', 'POST'])
 def getBlogs(request):
-    return getBlogsList()
+    if request.method == 'GET':
+        return getBlogsList()
+    
+    if request.method == 'POST':
+        return createBlog(request)
 
 @api_view(['GET'])
 def getBlog(request, pk):
