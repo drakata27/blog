@@ -1,26 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap');
 
 :root {
-  --color-main: #f68657;
+  /* --color-main: #f68657;
   --color-text: #383a3f;
   --color-dark: #1f2124;
   --color-gray: #677;
   --color-bg: #f3f6f9;
   --color-light: #acb4bd;
-  --color-lighter: #f9f9f9;
-  --color-white: #fff;
-  --color-border:#e0e3e6;
+  --color-white: #fff;*/
+  --color-border:#e0e3e6; 
+  --color-title:#8e969d;
+  --color-headfoot: #f9f9f9;
+  --color-text: #383a3f;
 }
 
 .dark {
-  --color-main: #f68657;
+  /* --color-main: #f68657;
   --color-text: #d6d1d1;
   --color-dark: #f5f6f7;
   --color-gray: #999;
   --color-bg: #1f2124;
-  --color-lighter: #292a2c;
-  --color-white: #2e3235;
-  --color-border:#252629;
+  --color-white: #2e3235; */
+  --color-border:#252629; 
+  --color-title:#8e969d;
+  --color-headfoot: #292a2c;
+  --color-text: #d6d1d1;
 }
 
 *{
@@ -31,6 +35,28 @@
   color: inherit;
   font-size: inherit;
   scroll-behavior: smooth;
+}
+
+html{
+  background-color: #383a3f;
+}
+
+h1 {
+  font-size: 3rem;
+  padding-left: 1rem;
+  color: var(--color-title);
+}
+
+h2 {
+  font-size: 2rem;
+  padding-left: 1rem;
+  color: var(--color-title);
+}
+
+p{
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: var(--color-text);
 }
 
 a{
@@ -57,7 +83,7 @@ button:hover {
   align-items: center;
   padding: 16px;
   justify-content: space-between;
-  background-color: var(--color-lighter);
+  background-color: var(--color-headfoot);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -66,6 +92,10 @@ button:hover {
   color: orange;
   font-weight: 800;
   text-align: center;
+}
+
+.buttons span{
+  padding: 0.5rem;
 }
 
 .buttons>:nth-of-type(1){
@@ -77,11 +107,48 @@ button:hover {
   background-color: darkgreen;
 }
 
-.buttons>:nth-of-type(2){
+/* .buttons>:nth-of-type(2){
   background-color: darkmagenta;
 
 }
 
 .buttons>:nth-of-type(2):hover{
   background-color: purple;
+} */
+
+/* Blog Item */
+.blog-item{
+  display: flex;
+  margin: 2rem;
+  padding: 2rem;
+  border: 2px solid var(--color-border);
+  border-radius: 25px;
+}
+
+.blog-item:hover{
+ scale: 1.02;
+}
+
+.blog-item>div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: self-start;
+  width: 75%;
+  height: 50%;
+}
+
+.published {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-title);
+}
+
+.published>span {
+  color: lightgray;
+}
+
+.blogs-list{
+  margin-left: 7rem;
+  margin-right: 7rem;
 }

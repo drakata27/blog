@@ -16,7 +16,7 @@ const BlogsListPage = () => {
 
   return (
     <div>
-        <div className='notes-list'>
+        <div className='blogs-list'>
             {blogs.map((blog, index) => (
                 <BlogItem key={index} blog={blog} />
             ))}

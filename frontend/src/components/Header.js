@@ -1,4 +1,5 @@
 import React from 'react'
+import PostIcon from '../assets/post.png'
 
 // import {
 //   HashRouter as Router,
@@ -11,8 +12,11 @@ const Header = () => {
     <div className='app-header'> 
         <h1><a href="/">Blogs</a></h1>
         <div className="buttons">
-            <button><a href="/">Sign In</a></button>
-            <button><a href="/">Sign Up</a></button>
+            <button>
+              <span class="material-symbols-outlined">edit_square</span>
+            </button>
+            {/* <button><a href="/">Sign In</a></button>
+            <button><a href="/">Sign Up</a></button> */}
         </div>
     </div>
   )

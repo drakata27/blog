@@ -1,5 +1,7 @@
 import {React, useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
+import Paceholder from '../assets/placeholder.jpg'
+import {getTime} from '../utils/getTime'
 
 const BlogPage = () => {
     let {id} = useParams();
@@ -19,6 +21,9 @@ const BlogPage = () => {
   return (
     <div>
         <h1>{blog?.title}</h1>
+        <h2>{blog?.subtitle}</h2>
+        <p>{getTime(blog?.created)}</p>
+        <img src={Paceholder} alt='post'/>
         <p>{blog?.body}</p>
     </div>
   )
