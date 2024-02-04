@@ -20,7 +20,7 @@ const BlogsListPage = () => {
             {blogs.map((blog, index) => (
                 <BlogItem key={index} blog={blog} />
             ))}
-          </div>
+        </div>
     </div>
   )
 }

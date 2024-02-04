@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const CreateBlog = () => {
+    // let {id} = useParams();
+
     const [blog, setBlog] = useState({
         title: '',
         subtitle: '',

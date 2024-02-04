@@ -27,7 +27,7 @@ def deleteBlog(pk):
     blog.delete()
     return Response('Blog was deleted')
 
-def updateBlog(request, pk):
+def update_blog_details(request, pk):
     data = request.data
     blog = Blog.objects.get(id=pk)
     serializer = BlogSerializer(instance=blog, data=data)

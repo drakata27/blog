@@ -1,5 +1,5 @@
 import {React, useEffect, useState} from 'react'
-import {useParams} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import Paceholder from '../assets/placeholder.jpg'
 import {getTime} from '../utils/getTime'
 import { useNavigate } from 'react-router-dom';
@@ -49,16 +49,6 @@ const BlogPage = () => {
         }
       }
 
-      // let updateBlog = async () => {
-      //   fetch(`/api/blogs/${id}/`, {
-      //     method: "PUT",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify(blog)
-      //   })
-      // }
-
   return (
     <div className='blog-page'>
         <h1>{blog?.title}</h1>
@@ -69,9 +59,11 @@ const BlogPage = () => {
 
           <div>
             <button className='edit-btn'>
+              <Link to={`/blog/${id}/edit`}>
               <span className="material-symbols-outlined">
                 edit
               </span>
+              </Link>
             </button>
 
             <button 
