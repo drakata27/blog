@@ -2,10 +2,19 @@ import {React, useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import Paceholder from '../assets/placeholder.jpg'
 import {getTime} from '../utils/getTime'
+import { useNavigate } from 'react-router-dom';
 
 const BlogPage = () => {
     let {id} = useParams();
-    let [blog, setBlog] = useState(null);
+    // let [blog, setBlog] = useState(null);
+
+    const [blog, setBlog] = useState({
+      title: '',
+      subtitle: '',
+      body: '',
+  });
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const getBlog = async () => {
@@ -18,6 +27,28 @@ const BlogPage = () => {
         getBlog();
       }, [id]);
 
+      let deleteBlog = async () => {
+        try {
+          const response = await fetch(`/api/blogs/${id}/`, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            }
+          })
+
+          if (!response.ok) {
+            console.error('Error deleting blog. Server responded with:', response.status, response.statusText);
+            return;
+          }
+
+          const data = await response.json();
+          console.log('Blog deleted successfully:', data);
+          navigate('/')
+        } catch(error) {
+          console.error('Error deleting blog:', error);
+        }
+      }
+
   return (
     <div className='blog-page'>
         <h1>{blog?.title}</h1>
@@ -28,15 +59,17 @@ const BlogPage = () => {
 
           <div>
             <button className='edit-btn'>
-              <span class="material-symbols-outlined">
+              <span className="material-symbols-outlined">
                 edit
               </span>
             </button>
 
-            <button className='delete-btn'>
-              <span class="material-symbols-outlined">
-                delete
-              </span>
+            <button 
+              className='delete-btn'
+              onClick={deleteBlog}>
+                <span className="material-symbols-outlined">
+                  delete
+                </span>
             </button>
 
           </div>

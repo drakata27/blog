@@ -53,8 +53,12 @@ def getBlogs(request):
     if request.method == 'POST':
         return createBlog(request)
 
-@api_view(['GET'])
+@api_view(['GET', 'DELETE'])
 def getBlog(request, pk):
-    return getBlogDetail(request, pk)
+    if request.method == 'GET':
+        return getBlogDetail(request, pk)
+    
+    if request.method == 'DELETE':
+        return deleteBlog(pk)
 
 

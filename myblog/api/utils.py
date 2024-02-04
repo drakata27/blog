@@ -21,3 +21,8 @@ def getBlogDetail(request, pk):
     blog = Blog.objects.get(id=pk)
     serializer = BlogSerializer(blog, many=False)
     return Response(serializer.data)
+
+def deleteBlog(pk):
+    blog = Blog.objects.get(id=pk)
+    blog.delete()
+    return Response('Blog was deleted')
