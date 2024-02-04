@@ -123,11 +123,14 @@ button:hover {
   display: flex;
   margin: 2rem;
   padding: 2rem;
-  /* border-radius: 25px; */
 }
 
 .blog-item:hover{
- scale: 1.02;
+ scale: 1.015;
+}
+
+.blog-item:hover .blog-title {
+  color: white;
 }
 
 .blog-item>div:nth-child(2) {
@@ -168,6 +171,29 @@ button:hover {
   margin: 0 auto;
   width: 95%;
   height: auto;
+}
+
+.horizontal-container{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
+
+.horizontal-container>div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-btn{
+  background-color: orange;
+  margin: 0 0.5rem;
+}
+
+.delete-btn{
+  background-color: red;
+  margin: 0 0.5rem;
 }
 
 /* Create Blog */

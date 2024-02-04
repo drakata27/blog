@@ -12,7 +12,7 @@ const BlogItem = ({blog}) => {
           </div>
 
           <div>
-            <h1>{blog.title}</h1>
+            <h1 className='blog-title'>{blog.title}</h1>
             <h2><span>{blog.subtitle}</span></h2>
             <p className='published'>
               Published <span>{getTime(blog.created)}</span>
