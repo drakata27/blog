@@ -3,7 +3,7 @@ from .serializers import BlogSerializer
 from rest_framework.response import Response
 
 def getBlogsList():
-    blogs = Blog.objects.all().order_by('-updated')
+    blogs = Blog.objects.all().order_by('-created')
     serializer = BlogSerializer(blogs, many=True)
     return Response(serializer.data)
 
@@ -26,3 +26,12 @@ def deleteBlog(pk):
     blog = Blog.objects.get(id=pk)
     blog.delete()
     return Response('Blog was deleted')
+
+def updateBlog(request, pk):
+    data = request.data
+    blog = Blog.objects.get(id=pk)
+    serializer = BlogSerializer(instance=blog, data=data)
+
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)

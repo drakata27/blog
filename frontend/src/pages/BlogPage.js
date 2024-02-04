@@ -49,6 +49,16 @@ const BlogPage = () => {
         }
       }
 
+      // let updateBlog = async () => {
+      //   fetch(`/api/blogs/${id}/`, {
+      //     method: "PUT",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(blog)
+      //   })
+      // }
+
   return (
     <div className='blog-page'>
         <h1>{blog?.title}</h1>
@@ -84,3 +94,5 @@ const BlogPage = () => {
 }
 
 export default BlogPage
+
+
