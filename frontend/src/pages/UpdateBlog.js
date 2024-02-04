@@ -30,7 +30,6 @@ const UpdateBlog = () => {
 
 const navigate = useNavigate();
 
-
 const handleInputChange = (e) => {
     const { name, value } = e.target;
     setBlog({ ...blog, [name]: value });
@@ -53,7 +52,7 @@ let handleSubmit = ()=> {
 }
 
 return (
-    <div className='create-blog'>
+    <div className='blog-form'>
         <input
             type='text'
             name='title'

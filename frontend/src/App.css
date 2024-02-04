@@ -69,7 +69,7 @@ textarea{
   margin-top: 2rem;
   margin-bottom: 2rem;
   width: 50%;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0.5rem;
   border-radius: 15px;
 }
@@ -182,7 +182,7 @@ button:hover {
   display: flex;
   flex-direction: row;
   margin-bottom: 1rem;
-  justify-content: space-between;
+  justify-content: space-between
 }
 
 .horizontal-container>div{
@@ -202,13 +202,16 @@ button:hover {
 }
 
 /* Create Blog */
-.create-blog{
+.blog-form{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.subtitle-input {
+  font-size: 1.8rem;
+}
 
-.create-blog>button{
+.blog-form>button{
   background-color: green;
   margin-bottom: 2rem;
   font-size: 2rem;

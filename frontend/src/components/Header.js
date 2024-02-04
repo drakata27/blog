@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom'
 const Header = () => {
   return (
     <div className='app-header'> 
-        <h1><a href="/">Blogs</a></h1>
+        <div className='logo'>
+          <h1><a href="/">Blogs</a></h1>
+        </div>
+        
         <div className="buttons">
           <button>
             <Link to="/blog/new/">

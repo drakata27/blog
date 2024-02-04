@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const CreateBlog = () => {
-    // let {id} = useParams();
-
     const [blog, setBlog] = useState({
         title: '',
         subtitle: '',
@@ -53,7 +51,7 @@ const CreateBlog = () => {
     }
 
     return (
-        <div className='create-blog'>
+        <div className='blog-form'>
             <input
                 type='text'
                 name='title'
@@ -62,6 +60,7 @@ const CreateBlog = () => {
                 onChange={handleInputChange}
             />
             <input
+                className='subtitle-input'
                 type='text'
                 name='subtitle'
                 placeholder='Subtitle...'
