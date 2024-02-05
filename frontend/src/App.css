@@ -53,6 +53,7 @@ p{
   padding: 1rem;
   font-size: 1.5rem;
   color: var(--color-text);
+  font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 a{
@@ -101,11 +102,9 @@ button:hover {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.app-header h1 {
-  font-size: 30px;
-  color: orange;
-  font-weight: 800;
-  text-align: center;
+.app-header a img{
+  height: 5rem;
+  width:  5rem;
 }
 
 .buttons span{
@@ -124,8 +123,7 @@ button:hover {
 /* Blog Item */
 .blog-item {
   display: flex;
-  margin: 2rem;
-  padding: 2rem;
+  margin: 0 2rem 3rem;
 }
 
 .blog-item:hover{
@@ -167,7 +165,7 @@ button:hover {
 }
 
 .blogs-list-container>h1{
-  color: white;
+  color: orange;
   margin-top: 2rem;
   margin-left: 14%;
   margin-right: 14%;
@@ -176,7 +174,7 @@ button:hover {
 
 /* Blog Page */
 .blog-page{
-  margin: 0rem 30%;
+  margin: 2rem 30% 0;
 }
 
 .img-container {
@@ -281,9 +279,8 @@ button:hover {
 .ql-toolbar {
   background-color: wheat;
 }
-
-/* .ql-editor>p,
-.ql-editor>h1,
-.ql-editor>h2{
-  color: black;
-} */
+/* Placeholder text */
+.quill > .ql-container > .ql-editor.ql-blank::before{
+  font-size: 20px;
+  color: var(--color-text);
+}

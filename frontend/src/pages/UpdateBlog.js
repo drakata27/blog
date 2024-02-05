@@ -79,6 +79,7 @@ return (
               modules={modules}
               theme="snow" 
               value={blog.body} 
+              placeholder='Type here...'
               onChange={body => handleInputChange({ target: { value: body, name: 'body' } })}
           />
 
