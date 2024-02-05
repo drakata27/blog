@@ -4,7 +4,7 @@ from .utils import *
 
 # Create your views here.
 @api_view(['GET'])
-def getRoutes(request):
+def get_routes(request):
     routes = [
         {
             'Endpoint': '/blog/',
@@ -46,20 +46,20 @@ def getRoutes(request):
     return Response(routes)
 
 @api_view(['GET', 'POST'])
-def getBlogs(request):
+def get_blogs(request):
     if request.method == 'GET':
-        return getBlogsList()
+        return get_blogs_list()
     
     if request.method == 'POST':
-        return createBlog(request)
+        return create_blog(request)
 
 @api_view(['GET', 'DELETE'])
-def getBlog(request, pk):
+def get_blog(request, pk):
     if request.method == 'GET':
-        return getBlogDetail(request, pk)
+        return get_blog_detail(request, pk)
     
     if request.method == 'DELETE':
-        return deleteBlog(pk)
+        return delete_blog(pk)
     
 @api_view(['PUT', 'GET'])
 def update_blog(request, pk):

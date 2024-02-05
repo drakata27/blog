@@ -2,12 +2,12 @@ from .models import Blog
 from .serializers import BlogSerializer
 from rest_framework.response import Response
 
-def getBlogsList():
+def get_blogs_list():
     blogs = Blog.objects.all().order_by('-created')
     serializer = BlogSerializer(blogs, many=True)
     return Response(serializer.data)
 
-def createBlog(request):
+def create_blog(request):
     data = request.data
     blog = Blog.objects.create(
         title=data['title'],
@@ -17,12 +17,12 @@ def createBlog(request):
     serializer = BlogSerializer(blog, many=False)
     return Response(serializer.data)
 
-def getBlogDetail(request, pk):
+def get_blog_detail(request, pk):
     blog = Blog.objects.get(id=pk)
     serializer = BlogSerializer(blog, many=False)
     return Response(serializer.data)
 
-def deleteBlog(pk):
+def delete_blog(pk):
     blog = Blog.objects.get(id=pk)
     blog.delete()
     return Response('Blog was deleted')
