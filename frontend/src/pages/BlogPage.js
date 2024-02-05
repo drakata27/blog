@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 const BlogPage = () => {
     let {id} = useParams();
-    // let [blog, setBlog] = useState(null);
 
     const [blog, setBlog] = useState({
       title: '',
@@ -80,7 +79,10 @@ const BlogPage = () => {
         <div className='img-container'>
           <img src={Paceholder} alt='post'/>
         </div>
-        <p>{blog?.body}</p>
+
+        <div 
+        className='ql-editor' 
+        dangerouslySetInnerHTML={{__html:blog?.body}}></div>
     </div>
   )
 }

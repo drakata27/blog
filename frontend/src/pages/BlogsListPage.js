@@ -15,7 +15,8 @@ const BlogsListPage = () => {
     }
 
   return (
-    <div>
+    <div className='blogs-list-container'>
+        <h1>Latest</h1>
         <div className='blogs-list'>
             {blogs.map((blog, index) => (
                 <BlogItem key={index} blog={blog} />

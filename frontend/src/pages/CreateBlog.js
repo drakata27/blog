@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import modules from '../utils/quilModules'
+
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const CreateBlog = () => {
     const [blog, setBlog] = useState({
@@ -9,7 +13,6 @@ const CreateBlog = () => {
     });
 
     const navigate = useNavigate();
-
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -40,10 +43,10 @@ const CreateBlog = () => {
     };
 
     let handleSubmit = ()=> {
+        console.log('body', blog);
 
         if (blog.title.trim() !== '' &&
-            blog.subtitle.trim() !== '' &&
-            blog.body.trim() !== '') {
+            blog.subtitle.trim() !== '') {
             createBlog();
         } else {
             alert('Blog contents cannot be empty');
@@ -67,15 +70,15 @@ const CreateBlog = () => {
                 value={blog.subtitle}
                 onChange={handleInputChange}
             />
-            <textarea
-                name='body'
-                id=''
-                cols='30'
-                rows='15'
-                placeholder='Content...'
-                value={blog.body}
-                onChange={handleInputChange}
-            ></textarea>
+            
+            <ReactQuill 
+                className='editor-input'
+                modules={modules}
+                theme="snow" 
+                value={blog.body} 
+                onChange={body => handleInputChange({ target: { value: body, name: 'body' } })}
+            />
+
             <button onClick={handleSubmit}>Publish</button>
         </div>
     );

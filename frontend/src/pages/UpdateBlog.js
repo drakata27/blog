@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import 'react-quill/dist/quill.snow.css';
+import modules from '../utils/quilModules'
+
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const UpdateBlog = () => {
   let {id} = useParams();
@@ -9,6 +14,7 @@ const UpdateBlog = () => {
     subtitle: '',
     body: '',
 });
+
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -67,15 +73,15 @@ return (
             value={blog.subtitle}
             onChange={handleInputChange}
         />
-        <textarea
-            name='body'
-            id=''
-            cols='30'
-            rows='15'
-            placeholder='Content...'
-            value={blog.body}
-            onChange={handleInputChange}
-        ></textarea>
+
+          <ReactQuill 
+              className='editor-input'
+              modules={modules}
+              theme="snow" 
+              value={blog.body} 
+              onChange={body => handleInputChange({ target: { value: body, name: 'body' } })}
+          />
+
         <button className='save-btn' onClick={handleSubmit}>Save</button>
     </div>
 );
