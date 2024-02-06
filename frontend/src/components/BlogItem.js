@@ -6,7 +6,7 @@ import {getTime} from '../utils/getTime'
 const BlogItem = ({blog}) => {
   return (
     <Link to={`/blog/${blog.id}`}>
-        <div className="blog-item" >
+        <div className="blog-item">
           <div>
             <img src={Paceholder} alt='blog'/>
           </div>

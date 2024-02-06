@@ -49,11 +49,17 @@ h2 {
   color: var(--color-subtitle);
 }
 
-p{
+p {
   padding: 1rem;
   font-size: 1.5rem;
   color: var(--color-text);
   font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+li {
+  /* padding: 1rem; */
+  font-size: 1.5rem;
+  color: var(--color-text);
 }
 
 a{
@@ -222,16 +228,14 @@ button:hover {
   align-items: center;
 }
 
-.blog-form>button{
-  margin-top: 2rem;
-}
 .subtitle-input {
   font-size: 1.8rem;
 }
 
 .blog-form>button{
   background-color: green;
-  margin-bottom: 2rem;
+  margin-top: 7rem;
+  margin-bottom: 10rem;
   font-size: 2rem;
   padding: 1rem;
   width: 20%;

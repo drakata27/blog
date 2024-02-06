@@ -64,24 +64,26 @@ return (
             name='title'
             placeholder='Title...'
             value={blog.title}
-            onChange={handleInputChange}
+            // onChange={handleInputChange}
+            onChange={(e) => handleInputChange({ target: { value: e.target.value, name: 'title' } })}
         />
         <input
             type='text'
             name='subtitle'
             placeholder='Subtitle...'
             value={blog.subtitle}
-            onChange={handleInputChange}
+            // onChange={handleInputChange}
+            onChange={(e) => handleInputChange({ target: { value: e.target.value, name: 'subtitle' } })}
         />
 
-          <ReactQuill 
-              className='editor-input'
-              modules={modules}
-              theme="snow" 
-              value={blog.body} 
-              placeholder='Type here...'
-              onChange={body => handleInputChange({ target: { value: body, name: 'body' } })}
-          />
+        <ReactQuill 
+            className='editor-input'
+            modules={modules}
+            theme="snow" 
+            value={blog.body} 
+            placeholder='Type here...'
+            onChange={body => handleInputChange({ target: { value: body, name: 'body' } })}
+        />
 
         <button className='save-btn' onClick={handleSubmit}>Save</button>
     </div>

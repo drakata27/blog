@@ -28,25 +28,29 @@ const BlogPage = () => {
       }, [id]);
 
       let deleteBlog = async () => {
-        try {
-          const response = await fetch(`/api/blogs/${id}/`, {
-            method: "DELETE",
-            headers: {
-              "Content-Type": "application/json",
+        const isConfirmed = window.confirm("Are you sure you want to delete this blog?");
+
+        if (isConfirmed) {
+          try {
+            const response = await fetch(`/api/blogs/${id}/`, {
+              method: "DELETE",
+              headers: {
+                "Content-Type": "application/json",
+              }
+            })
+  
+            if (!response.ok) {
+              console.error('Error deleting blog. Server responded with:', response.status, response.statusText);
+              return;
             }
-          })
-
-          if (!response.ok) {
-            console.error('Error deleting blog. Server responded with:', response.status, response.statusText);
-            return;
+  
+            const data = await response.json();
+            console.log('Blog deleted successfully:', data);
+            navigate('/')
+          } catch(error) {
+            console.error('Error deleting blog:', error);
           }
-
-          const data = await response.json();
-          console.log('Blog deleted successfully:', data);
-          navigate('/')
-        } catch(error) {
-          console.error('Error deleting blog:', error);
-        }
+        } 
       }
 
   return (
