@@ -1,6 +1,7 @@
 import {React, useEffect, useState} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import Paceholder from '../assets/placeholder.jpg'
+import Anonymous from '../assets/anonymous-user.jpg'
 import {getTime} from '../utils/getTime'
 import { useNavigate } from 'react-router-dom';
 
@@ -52,6 +53,13 @@ const BlogPage = () => {
     <div className='blog-page'>
         <h1>{blog?.title}</h1>
         <h2>{blog?.subtitle}</h2>
+        
+        <div className='horizontal-container'>
+          <div className='author-container'>
+            <img src={Anonymous} alt='author'/>
+            <p>Anonymous Author</p>
+          </div>
+        </div>
 
         <div className='horizontal-container'>
           <p>{getTime(blog?.created)}</p>
