@@ -53,6 +53,14 @@ const CreateBlog = () => {
         }        
     }
 
+
+    const [inputKey, setInputKey] = useState(Date.now()); 
+    
+    const clearImage = () => {
+        setInputKey(Date.now());
+    }
+        
+
     return (
         <div className='blog-form'>
             <input
@@ -70,6 +78,12 @@ const CreateBlog = () => {
                 value={blog.subtitle}
                 onChange={handleInputChange}
             />
+            
+            <div className='cover-container '>
+                <h2>Upload Cover</h2>
+                <input type='file' accept='image/*' key={inputKey}/>
+                <button onClick={clearImage}>Remove</button>
+            </div>
             
             <ReactQuill 
                 className='editor-input'

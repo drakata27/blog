@@ -57,6 +57,12 @@ let handleSubmit = ()=> {
   navigate(`/blog/${id}`)
 }
 
+const [inputKey, setInputKey] = useState(Date.now()); 
+    
+    const clearImage = () => {
+        setInputKey(Date.now());
+    }
+
 return (
     <div className='blog-form'>
         <input
@@ -64,7 +70,6 @@ return (
             name='title'
             placeholder='Title...'
             value={blog.title}
-            // onChange={handleInputChange}
             onChange={(e) => handleInputChange({ target: { value: e.target.value, name: 'title' } })}
         />
         <input
@@ -72,9 +77,14 @@ return (
             name='subtitle'
             placeholder='Subtitle...'
             value={blog.subtitle}
-            // onChange={handleInputChange}
             onChange={(e) => handleInputChange({ target: { value: e.target.value, name: 'subtitle' } })}
         />
+
+        <div className='cover-container '>
+          <h2>Upload Cover</h2>
+          <input type='file' accept='image/*'key={inputKey}/>
+          <button onClick={clearImage}>Remove</button>
+        </div>
 
         <ReactQuill 
             className='editor-input'

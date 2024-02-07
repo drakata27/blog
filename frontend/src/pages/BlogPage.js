@@ -1,7 +1,10 @@
 import {React, useEffect, useState} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import Paceholder from '../assets/placeholder.jpg'
-import Anonymous from '../assets/anonymous-user.jpg'
+// import Anonymous from '../assets/anonymous-user.jpg'
+import Profile from '../assets/profile-photo.jpg'
+import GitHub from '../assets/github.png'
+import LinkedIn from '../assets/linkedin.png'
 import {getTime} from '../utils/getTime'
 import { useNavigate } from 'react-router-dom';
 
@@ -60,8 +63,8 @@ const BlogPage = () => {
         
         <div className='horizontal-container'>
           <div className='author-container'>
-            <img src={Anonymous} alt='author'/>
-            <p>Anonymous Author</p>
+            <img src={Profile} alt='author'/>
+            <p>Aleksandar Drakaliyski</p>
           </div>
         </div>
 
@@ -95,6 +98,11 @@ const BlogPage = () => {
         <div 
         className='ql-editor' 
         dangerouslySetInnerHTML={{__html:blog?.body}}></div>
+
+        <div className='socials'>
+          <Link to='https://github.com/drakata27'><img className='social-icon' src={GitHub} alt='github'/></Link>
+          <Link to='https://www.linkedin.com/in/aleksandar-drakaliyski/'><img className='social-icon' src={LinkedIn} alt='linkedin'/></Link>
+        </div>
     </div>
   )
 }
