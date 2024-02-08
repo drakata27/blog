@@ -7,8 +7,12 @@ const BlogItem = ({blog}) => {
   return (
     <Link to={`/blog/${blog.id}`}>
         <div className="blog-item">
-          <div>
-            <img src={Paceholder} alt='blog'/>
+          <div >
+            {blog.cover ? (
+              <img className='cover' src={blog.cover}  alt='blog' />
+            ) : (
+              <img className='cover' src={Paceholder} alt='blog' />
+            )}
           </div>
 
           <div>

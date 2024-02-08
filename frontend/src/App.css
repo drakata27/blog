@@ -146,6 +146,10 @@ button:hover {
   align-items: center;
 }
 
+.cover {
+  width: 35rem;
+}
+
 .blog-item>div:nth-child(2) {
   display: flex;
   flex-direction: column;
@@ -223,13 +227,14 @@ button:hover {
 
 .socials{
   display: flex;
-  justify-content: center;
+  /* justify-content: baseline; */
+  align-self: flex-end;
 }
 
 .socials>a>img{
-  margin: 0 1rem 1rem 1rem;
-  width: 2rem;
-  height: 2rem;
+  margin: 0 0.5rem 1rem 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .social-icon {
@@ -259,6 +264,11 @@ button:hover {
   font-size: 2rem;
   padding: 1rem;
   width: 20%;
+}
+
+.author-container{
+  display: flex;
+  justify-content: baseline;
 }
 
 .author-container>img{

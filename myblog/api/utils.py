@@ -9,11 +9,20 @@ def get_blogs_list():
 
 def create_blog(request):
     data = request.data
+    # cover = data.pop('cover', None)
+    
     blog = Blog.objects.create(
         title=data['title'],
         subtitle=data['subtitle'],
+        cover=data['cover'],
         body=data['body']
     )
+
+    # If cover is provided, save it separately
+    # if cover:
+    #     blog.cover = cover
+    #     blog.save()
+
     serializer = BlogSerializer(blog, many=False)
     return Response(serializer.data)
 

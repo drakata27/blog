@@ -65,6 +65,12 @@ const BlogPage = () => {
           <div className='author-container'>
             <img src={Profile} alt='author'/>
             <p>Aleksandar Drakaliyski</p>
+
+            <div className='socials'>
+              <Link to='https://www.linkedin.com/in/aleksandar-drakaliyski/'><img className='social-icon' src={LinkedIn} alt='linkedin'/></Link>
+              <Link to='https://github.com/drakata27'><img className='social-icon' src={GitHub} alt='github'/></Link>
+            </div>
+
           </div>
         </div>
 
@@ -92,17 +98,22 @@ const BlogPage = () => {
         </div>
 
         <div className='img-container'>
-          <img src={Paceholder} alt='post'/>
+          {/* <img src={Paceholder} alt='post'/> */}
+          {blog.cover ? (
+              <img className='cover' src={blog.cover}  alt='blog' />
+            ) : (
+              <img className='cover' src={Paceholder} alt='blog' />
+            )}
         </div>
 
         <div 
         className='ql-editor' 
         dangerouslySetInnerHTML={{__html:blog?.body}}></div>
 
-        <div className='socials'>
+        {/* <div className='socials'>
           <Link to='https://www.linkedin.com/in/aleksandar-drakaliyski/'><img className='social-icon' src={LinkedIn} alt='linkedin'/></Link>
           <Link to='https://github.com/drakata27'><img className='social-icon' src={GitHub} alt='github'/></Link>
-        </div>
+        </div> */}
     </div>
   )
 }
