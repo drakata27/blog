@@ -9,7 +9,6 @@ def get_blogs_list():
 
 def create_blog(request):
     data = request.data
-    # cover = data.pop('cover', None)
     
     blog = Blog.objects.create(
         title=data['title'],
@@ -18,15 +17,10 @@ def create_blog(request):
         body=data['body']
     )
 
-    # If cover is provided, save it separately
-    # if cover:
-    #     blog.cover = cover
-    #     blog.save()
-
     serializer = BlogSerializer(blog, many=False)
     return Response(serializer.data)
 
-def get_blog_detail(request, pk):
+def get_blog_detail(pk):
     blog = Blog.objects.get(id=pk)
     serializer = BlogSerializer(blog, many=False)
     return Response(serializer.data)
@@ -39,8 +33,16 @@ def delete_blog(pk):
 def update_blog_details(request, pk):
     data = request.data
     blog = Blog.objects.get(id=pk)
+    # cover = data.pop('cover', None)
+    # print(f'cover {cover}')
     serializer = BlogSerializer(instance=blog, data=data)
+
+    # if cover:
+    #     blog.cover = cover
+    #     blog.save()
+
 
     if serializer.is_valid():
         serializer.save()
+
     return Response(serializer.data)

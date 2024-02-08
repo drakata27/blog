@@ -9,12 +9,14 @@ import 'react-quill/dist/quill.snow.css';
 const UpdateBlog = () => {
   let {id} = useParams();
 
+  const [cover, setCover] = useState()
+
   const [blog, setBlog] = useState({
     title: '',
     subtitle: '',
+    cover: cover,
     body: '',
-});
-
+  });
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -34,34 +36,56 @@ const UpdateBlog = () => {
     fetchBlog();
   }, [id]);
 
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setBlog({ ...blog, [name]: value });
+  const handleInputChange = (e) => {
+      const { name, value } = e.target;
+      setBlog({ ...blog, [name]: value });
+  };
+
+  const updateBlog = async () => {
+    const formData = new FormData();
+    formData.append('title', blog.title);
+    formData.append('subtitle', blog.subtitle);
+    formData.append('body', blog.body);
+    if (cover) {
+      formData.append('cover', cover);
+    } 
+
+    try {
+        const response = await fetch(`/api/blogs/${id}/edit`, {
+          method: "PUT",
+          body: formData
+        });
+
+        if (!response.ok) {
+            console.error('Error updating blog. Server responded with:', response.status, response.statusText);
+            return;
+        }
+
+        const data = await response.json();
+        setBlog(data)
+        console.log('Blog updated successfully:', data);
+        navigate(`/blog/${id}`)
+    } catch (error) {
+        console.error('Error updating blog:', error);
+    }
 };
 
-let updateBlog = async () => {
-  fetch(`/api/blogs/${id}/edit`, {
+let uploadCover = async () => {
+  const formData = new FormData();
+  formData.append('cover', cover);
+
+  const response = await fetch(`/api/blogs/${id}/edit`, {
     method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(blog)
+    body: formData,
   })
+
+  if (cover) {
+    const data = await response.json();
+    setBlog({ ...blog, cover: data.cover });
+  }
 }
-
-
-let handleSubmit = ()=> {
-  updateBlog()
-  navigate(`/blog/${id}`)
-}
-
-const [inputKey, setInputKey] = useState(Date.now()); 
-    
-    const clearImage = () => {
-        setInputKey(Date.now());
-    }
 
 return (
     <div className='blog-form'>
@@ -80,10 +104,18 @@ return (
             onChange={(e) => handleInputChange({ target: { value: e.target.value, name: 'subtitle' } })}
         />
 
+        <div className="cover-preview">
+          <img src={blog.cover} alt="cover" />
+        </div>
+
         <div className='cover-container '>
-          <h2>Upload Cover</h2>
-          <input type='file' accept='image/*'key={inputKey}/>
-          <button onClick={clearImage}>Remove</button>
+            <h2>Upload Cover</h2>
+            <input 
+                type='file' 
+                accept='image/*' 
+                value={undefined} 
+                onChange={(e)=> setCover(e.target.files[0])}/>
+            <button onClick={uploadCover} className='upload-btn'>Uplaod</button>
         </div>
 
         <ReactQuill 
@@ -95,7 +127,7 @@ return (
             onChange={body => handleInputChange({ target: { value: body, name: 'body' } })}
         />
 
-        <button className='save-btn' onClick={handleSubmit}>Save</button>
+        <button className='save-btn' onClick={updateBlog}>Save</button>
     </div>
 );
 }

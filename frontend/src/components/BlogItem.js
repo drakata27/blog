@@ -14,7 +14,7 @@ const BlogItem = ({blog}) => {
               <img className='cover' src={Paceholder} alt='blog' />
             )}
           </div>
-
+          
           <div>
             <h1 className='blog-title'>{blog.title}</h1>
             <h2><span>{blog.subtitle}</span></h2>

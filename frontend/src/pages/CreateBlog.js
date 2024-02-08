@@ -29,14 +29,12 @@ const CreateBlog = () => {
             formData.append('title', blog.title);
             formData.append('subtitle', blog.subtitle);
             formData.append('body', blog.body);
-            formData.append('cover', cover, cover.name);
+            formData.append('cover', cover);
 
             const response = await fetch(`/api/blogs/`, {
                 method: 'POST',
                 body: formData,
             });
-
-            
 
             if (!response.ok) {
                 console.error('Error creating blog. Server responded with:', response.status, response.statusText);
@@ -98,7 +96,7 @@ const CreateBlog = () => {
                     key={inputKey} 
                     value={undefined} 
                     onChange={(e)=> setCover(e.target.files[0])}/>
-                <button onClick={clearImage}>Remove</button>
+                <button onClick={clearImage} className='remove-btn'>Remove</button>
             </div>
             
             <ReactQuill 
