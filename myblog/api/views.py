@@ -1,8 +1,7 @@
 from rest_framework.response import Response
-from rest_framework import viewsets
-from django.http import HttpResponse
 from rest_framework.decorators import api_view
 from .utils import *
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 @api_view(['GET'])
@@ -61,7 +60,7 @@ def get_blog(request, pk):
         return get_blog_detail(pk)
     
     if request.method == 'DELETE':
-        return delete_blog(pk)
+        return delete_blog(request, pk)
     
 @api_view(['PUT', 'GET'])
 def update_blog(request, pk):

@@ -30,6 +30,8 @@ const BlogPage = () => {
         getBlog();
       }, [id]);
 
+      console.log('User', blog.user)
+
       let deleteBlog = async () => {
         const isConfirmed = window.confirm("Are you sure you want to delete this blog?");
 
