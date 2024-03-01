@@ -117,13 +117,24 @@ button:hover {
   padding: 0.5rem;
 }
 
-.buttons>:nth-of-type(1){
+.new-blog-btn{
   background-color: green;
   margin-right: 20px;
 }
 
-.buttons>:nth-of-type(1):hover{
+.new-blog-btn:hover{
   background-color: darkgreen;
+}
+
+.auth-btn{
+  margin-right: 1rem;
+  background-color: transparent;
+}
+
+.auth-btn:hover {
+  color: orange;
+  text-decoration: underline;
+  transform: scale(1.1);
 }
 
 /* Blog Item */

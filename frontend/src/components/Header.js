@@ -12,7 +12,9 @@ const Header = () => {
         </div>
         
         <div className="buttons">
-          <button>
+          <button className='auth-btn'>Login</button>
+          <button className='auth-btn'>Sign Up</button>
+          <button className='new-blog-btn'>
             <Link to="/blog/new/">
               <span className="material-symbols-outlined">edit_square</span>
             </Link>
