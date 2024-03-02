@@ -123,6 +123,7 @@ def get_blog(request, pk):
         return delete_blog(request, pk)
     
 @api_view(['PUT', 'GET'])
+@permission_classes([IsAuthenticated])
 def update_blog(request, pk):
     return update_blog_details(request, pk)
     

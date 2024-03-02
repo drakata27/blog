@@ -1,7 +1,6 @@
 import {React, useEffect, useState} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import Paceholder from '../assets/placeholder.jpg'
-// import Anonymous from '../assets/anonymous-user.jpg'
 import Profile from '../assets/profile-photo.jpg'
 import GitHub from '../assets/github.png'
 import LinkedIn from '../assets/linkedin.png'

@@ -136,7 +136,10 @@ button:hover {
   text-decoration: underline;
   transform: scale(1.1);
 }
-
+.username{
+  font-family: 'Lexend', sans-serif;
+  margin-right: 2rem;
+}
 /* Blog Item */
 .blog-item {
   display: flex;
@@ -394,4 +397,51 @@ button:hover {
 .quill > .ql-container > .ql-editor.ql-blank::before{
   font-size: 20px;
   color: var(--color-text);
+}
+
+/* Login */
+.login-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.input-container{
+  margin-top: 2rem;
+}
+
+.input-container label{
+  font-size: 2rem;
+  color: var(--color-text);
+  margin-bottom: 0%;
+}
+.input-container input{
+  font-size: 2rem;
+  width: 100%;
+  margin-top: 0%;
+
+}
+
+.login-btn{
+  background-color: green;
+  margin-top: 2rem;
+  width: 10%;
+}
+
+.login-btn:hover{
+  background-color: darkgreen;
+}
+
+.login-form p{
+  color: var(--color-text);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.login-form a:hover{
+  color: orange;
+}
+
+.email-input{
+  margin-bottom: 2rem;
 }
