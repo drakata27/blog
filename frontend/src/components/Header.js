@@ -27,7 +27,7 @@ const Header = () => {
           {token === null && 
             <>
               <button className='auth-btn'><Link to='/login'>Login</Link></button>
-              <button className='auth-btn'>Sign Up</button>
+              <button className='auth-btn'><Link to='/register'>Register</Link></button>
             </>
           }
 

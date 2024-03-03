@@ -16,7 +16,7 @@ const LoginPage = () => {
   return (
     <div>
       <>
-        <form className='login-form' onSubmit={handleSubmit}> 
+        <form onSubmit={handleSubmit}> 
         <div className="input-container">
             <label 
                 className="email-label" 
@@ -46,7 +46,7 @@ const LoginPage = () => {
 
 
             <button
-                className="btn login-btn"
+                className="btn form-btn"
                 type="submit"
             >
                 Login
