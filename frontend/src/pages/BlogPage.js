@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {React, useEffect, useState} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import Paceholder from '../assets/placeholder.jpg'
@@ -6,6 +7,7 @@ import GitHub from '../assets/github.png'
 import LinkedIn from '../assets/linkedin.png'
 import {getTime} from '../utils/getTime'
 import { useNavigate } from 'react-router-dom';
+import {jwtDecode} from 'jwt-decode'
 
 const BlogPage = () => {
     let {id} = useParams();
@@ -15,6 +17,13 @@ const BlogPage = () => {
       subtitle: '',
       body: '',
   });
+
+  const token = localStorage.getItem("authTokens")
+
+  if (token) {
+    const decoded = jwtDecode(token)
+    var user_id = decoded.user_id
+  }
 
     const navigate = useNavigate();
 
@@ -78,24 +87,28 @@ const BlogPage = () => {
         <div className='horizontal-container'>
           <p>{getTime(blog?.created)}</p>
 
-          <div>
-            <button className='edit-btn'>
-              <Link to={`/blog/${id}/edit`}>
-              <span className="material-symbols-outlined">
-                edit
-              </span>
-              </Link>
-            </button>
-
-            <button 
-              className='delete-btn'
-              onClick={deleteBlog}>
+        {token !== null &&
+          <>
+            <div>
+              <button className='edit-btn'>
+                <Link to={`/blog/${id}/edit`}>
                 <span className="material-symbols-outlined">
-                  delete
+                  edit
                 </span>
-            </button>
+                </Link>
+              </button>
 
-          </div>
+              <button 
+                className='delete-btn'
+                onClick={deleteBlog}>
+                  <span className="material-symbols-outlined">
+                    delete
+                  </span>
+              </button>
+            </div>
+          </>
+        }
+
         </div>
 
         <div className='img-container'>
