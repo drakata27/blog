@@ -29,7 +29,11 @@ const CreateBlog = () => {
             formData.append('title', blog.title);
             formData.append('subtitle', blog.subtitle);
             formData.append('body', blog.body);
-            formData.append('cover', cover);
+            if (cover) {
+                formData.append('cover', cover);
+            } else {
+                formData.append('cover', '/covers/default.jpg');
+            }
 
             const response = await fetch(`/api/blogs/`, {
                 method: 'POST',
@@ -52,8 +56,6 @@ const CreateBlog = () => {
     
     let handleSubmit = ()=> {
         console.log('body', blog);
-        console.log('cover', cover);
-
         if (blog.title.trim() !== '' &&
             blog.subtitle.trim() !== '') {
             createBlog();

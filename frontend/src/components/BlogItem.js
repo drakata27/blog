@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Paceholder from '../assets/placeholder.jpg'
+import Placeholder from '../assets/placeholder.jpg'
 import {getTime} from '../utils/getTime'
 
 const BlogItem = ({blog}) => {
@@ -11,7 +11,7 @@ const BlogItem = ({blog}) => {
             {blog.cover ? (
               <img className='cover' src={blog.cover}  alt='blog' />
             ) : (
-              <img className='cover' src={Paceholder} alt='blog' />
+              <img className='cover' src={Placeholder} alt='blog' />
             )}
           </div>
           
