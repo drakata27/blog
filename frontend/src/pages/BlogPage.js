@@ -5,6 +5,7 @@ import Paceholder from '../assets/placeholder.jpg'
 import Profile from '../assets/profile-photo.jpg'
 import GitHub from '../assets/github.png'
 import LinkedIn from '../assets/linkedin.png'
+
 import {getTime} from '../utils/getTime'
 import { useNavigate } from 'react-router-dom';
 import {jwtDecode} from 'jwt-decode'
@@ -110,7 +111,6 @@ const BlogPage = () => {
         </div>
 
         <div className='img-container'>
-          {/* <img src={Paceholder} alt='post'/> */}
           {blog.cover ? (
               <img className='cover' src={blog.cover}  alt='blog' />
             ) : (

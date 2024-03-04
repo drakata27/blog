@@ -361,20 +361,34 @@ button:hover {
 
 /* Footer */
 .footer{
-  display: flex;
-  align-items: center;
   padding: 16px;
-  justify-content: space-between;
   text-align: center;
   background-color: var(--color-headfoot);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  height: 10rem;
+  height: 12rem;
 }
 
 .footer>p {
   margin: 0 auto;
   width: 100%;
   height: auto;
+}
+
+.socials-footer{
+  display: flex;
+}
+
+.socials-footer>a>img{
+  margin: 0 0.5rem 1rem 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.vertical-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 /* Editor */
@@ -511,6 +525,35 @@ form a:hover{
     display: block;
     width: 100%;
     border-radius: 25px;
+  }
+
+  /* Blog Page */
+  .blog-page{
+    margin: 2rem 0.5rem;
+  }
+
+  .blog-page>h1 {
+    font-size: 2.5rem;
+  }
+  .blog-page>h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Login */
+  .input-container {
+    margin: 2rem;
+  }
+
+  .input-container>label{
+    font-size: 1rem;
+  }
+  .input-container>input{
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  .form-btn{
+    width: 50%;
   }
 
   /* Footer */
