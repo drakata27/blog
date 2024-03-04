@@ -26,7 +26,6 @@ def test_endpoint(request):
         return Response( {'response':data}, status=status.HTTP_200_OK)
     return Response( {}, status=status.HTTP_400_BAD_REQUEST)
 
-
 # Blogs
 @api_view(['GET'])
 def get_routes(request):
