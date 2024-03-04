@@ -23,9 +23,11 @@ function App() {
         <Routes>
           <Route path='/' exact Component={BlogsListPage} />
           <Route path='/blog/:id' Component={BlogPage} />
-
-          <Route exact path='/blog/:id/edit' element={<PrivateRoute/>}/>
-          <Route path='/blog/:id/edit' Component={UpdateBlog} />
+          
+          <Route exact path='/blog/:id/edit' element={<PrivateRoute/>}>
+            <Route path='/blog/:id/edit' Component={UpdateBlog} />
+          </Route>
+          
 
           <Route exact path='/blog/new' element={<PrivateRoute/>}>
             <Route path='/blog/new' Component={CreateBlog} />
@@ -42,3 +44,4 @@ function App() {
 }
 
 export default App;
+

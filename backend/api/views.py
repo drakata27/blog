@@ -111,7 +111,3 @@ def get_blog(request, pk):
 # @permission_classes([IsAuthenticated])
 def update_blog(request, pk):
     return update_blog_details(request, pk)
-    
-    
-
-
