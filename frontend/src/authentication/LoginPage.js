@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import {Link} from 'react-router-dom'
 import AuthContext from '../context/AuthContext'
 
 const LoginPage = () => {
@@ -51,13 +50,6 @@ const LoginPage = () => {
             >
                 Login
             </button>
-
-            <p className="">
-                Don't have an account?{" "}
-                <Link to="/register" style={{ textDecoration: "underline" }}>
-                    Register here
-                </Link>
-            </p>
         </form>
       </>
     </div>

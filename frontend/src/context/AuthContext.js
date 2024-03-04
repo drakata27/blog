@@ -48,24 +48,6 @@ export const AuthProvider = ({ children }) => {
         }
     }
 
-    const registerUser = async (email, username, password, confirm_password) => {
-        const response = await fetch('/api/register/', {
-            method : 'POST',
-            headers : {
-                "Content-Type": "application/json"
-            },
-            body : JSON.stringify({email, username, password, confirm_password})
-        })
-
-        if (response.status===201){
-            console.log('Account was created');
-            navigate('/login')
-        } else {
-            console.log('Server issue: '+response.status);
-            alert('Something went wrong: ' + response.status)
-        }
-    }
-
     const logoutUser = () => {
         setAuthTokens(null)
         setUser(null)
@@ -77,7 +59,6 @@ export const AuthProvider = ({ children }) => {
         user,
         setUser,
         authTokens,
-        registerUser,
         loginUser,
         logoutUser,
     }

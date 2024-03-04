@@ -13,7 +13,6 @@ import Footer from './components/Footer';
 import CreateBlog from './pages/CreateBlog';
 import UpdateBlog from './pages/UpdateBlog'
 import LoginPage from './authentication/LoginPage';
-import RegisterPage from './authentication/RegisterPage';
 
 function App() {
   return (
@@ -33,7 +32,6 @@ function App() {
           </Route>
 
           <Route exact path='/login' element={<LoginPage/>}/>
-          <Route exact path='/register' element={<RegisterPage/>}/>
 
         </Routes>
         <Footer />

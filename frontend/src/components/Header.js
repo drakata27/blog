@@ -18,20 +18,12 @@ const Header = () => {
   return (
     <div className='app-header'> 
         <div className='logo'>
-            {/* <a href="/">
-            <img src={Logo} alt='logo' />
-            </a> */}
-            <p>Aleks</p>
+            <a href="/">
+              <img src={Logo} alt='logo' />
+            </a>
         </div>
         
         <div className="buttons">
-          {token === null && 
-            <>
-              <button className='auth-btn'><Link to='/login'>Login</Link></button>
-              <button className='auth-btn'><Link to='/register'>Register</Link></button>
-            </>
-          }
-
         {token !== null && 
         <>
         <div className="horizontal-container">

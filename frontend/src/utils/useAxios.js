@@ -5,7 +5,6 @@ import dayjs from 'dayjs'
 import {useContext} from 'react'
 import AuthContext from '../context/AuthContext'
 
-// const baseURL = "http://127.0.0.1:8000/api" //use proxy url
 const baseURL = '/api'
 
 const useAxios = () => {
