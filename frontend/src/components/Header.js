@@ -18,9 +18,10 @@ const Header = () => {
   return (
     <div className='app-header'> 
         <div className='logo'>
-            <a href="/">
+            {/* <a href="/">
             <img src={Logo} alt='logo' />
-            </a>
+            </a> */}
+            <p>Aleks</p>
         </div>
         
         <div className="buttons">
