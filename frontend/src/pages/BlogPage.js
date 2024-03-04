@@ -76,8 +76,8 @@ const BlogPage = () => {
             <p>Aleksandar Drakaliyski</p>
 
             <div className='socials'>
-              <Link to='https://www.linkedin.com/in/aleksandar-drakaliyski/'><img className='social-icon' src={LinkedIn} alt='linkedin'/></Link>
-              <Link to='https://github.com/drakata27'><img className='social-icon' src={GitHub} alt='github'/></Link>
+              <Link to='https://www.linkedin.com/in/aleksandar-drakaliyski/' target="_blank"><img className='social-icon' src={LinkedIn} alt='linkedin'/></Link>
+              <Link to='https://github.com/drakata27' target="_blank"><img className='social-icon' src={GitHub} alt='github'/></Link>
             </div>
 
           </div>
